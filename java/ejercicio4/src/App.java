@@ -14,8 +14,26 @@ El sistema debe contar con:
 
 */
 
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        // Creamos una lista de tipo Animal
+        // Esto es importante porque aqui podremos guardar objetos Perro y Gato gracias
+        // a la herencia.
+        ArrayList<Animal> animales = new ArrayList<>();
+
+        // Agregamos objetos de distintas subclases
+        animales.add(new Perro("Firulais", 3));
+        animales.add(new Gato("Toby", 2));
+        animales.add(new Perro("Osito", 5));
+
+        // Recorremos la lista
+        for (Animal animal : animales) {
+            animal.mostrarInfo();
+            animal.hacerSonido();
+            System.out.println("----------------------");
+        }
     }
+
 }
